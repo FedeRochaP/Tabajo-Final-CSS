@@ -23,10 +23,18 @@
     <header class="header">
         <nav class="nav-bar">
             <ul>
-                <a href="#hero"><li>Sobre mi</li></a>
-                <a href="#trabajos"><li>Trabajo</li></a>
-                <a href="#card"><li>Info</li></a>
-                <a href="#contacto"><li>Contacto</li></a>
+                <a href="#hero">
+                    <li>Sobre mi</li>
+                </a>
+                <a href="#trabajos">
+                    <li>Trabajo</li>
+                </a>
+                <a href="#card">
+                    <li>Libreta</li>
+                </a>
+                <a href="#contacto">
+                    <li>Contacto</li>
+                </a>
             </ul>
         </nav>
     </header>
@@ -64,29 +72,46 @@
                 </div>
             </div>
         </section>
-            
-        <section id="card" class="card">
 
+        <section id="card" class="card">
+            <div class="card-container">
+                <div class="card-box">
+                    <div class="card-front">
+                        <div class="card-rotulo">
+                            <h2>Animaciones</h2>
+                        </div>
+                        <div class="rotulo-fix"></div>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <div class="card-back-text">
+                        <p><i>Ademas vimos como realizar diferentes tipos de animaciones utilizando las perspectivas de los objetos y haciendo que interactuen con el usuario</i></p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="contacto" class="contacto">
+            <div class="contacto-title">
+                <h1>Contacto</h1>
+            </div>
             <div class="contacto-container">
                 <form action="">
                     <div class="input-group">
-                        <input type="text" name=" name" id="name" placeholder="">
-                        <label for="name">Nombre</label>
+                        <input type="text" name=" name" id="name" placeholder=" ">
+                        <label for="name" class="l-1">Nombre</label>
                     </div>
                     <div class="input-group">
-                        <input type="email" name="email" id="email" placeholder="">
-                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder=" ">
+                        <label for="email" class="l-2">Email</label>
                     </div>
                     <div class="input-group">
-                        <input type="number" name="number" id="number" placeholder="">
-                        <label for="number">Teléfono</label>
+                        <input type="number" name="number" id="number" placeholder=" ">
+                        <label for="number" class="l-3">Teléfono</label>
                     </div>
                     <label for="">Elije el motivo del contacto</label>
                     <div class="check-container">
-                        <div class="box-container">     
+                        <div class="box-container">
                             <label class="check">
                                 <input type="checkbox" name="Option" id="">
                                 <span class="checkbox"></span>
@@ -102,13 +127,12 @@
                         </div>
                     </div>
                     <div class="submit-container">
-                        <button type="submit" class="submit">Submit</button>
+                        <button type="submit" class="submit">Enviar</button>
                     </div>
                 </form>
             </div>
         </section>
     </main>
-    <footer></footer>
 </body>
 
 </html>

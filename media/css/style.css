@@ -39,6 +39,7 @@ section {
     align-items: center;
     position: fixed;
     top: 0;
+    z-index: 99;
 }
 
 .nav-bar ul {
@@ -164,14 +165,122 @@ section {
     background-image: url('../img/practica-flex.png');
 }
 .trabajos-box:nth-child(2) {
-    background-image: url('');
+    background-image: url('../img/grid.png');
 }
 .trabajos-box:nth-child(3) {
     background-image: url('../img/formulario.png');
 }
 
+/* Card */
+
+.card {
+    background: rgb(43, 50, 56);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    width: 300px;
+    height: 400px;
+    perspective: 800px;
+    position: relative;
+}
+
+.card-box {
+    width: 300px;
+    height: 400px;
+    transform: rotateY(0);
+    transition: 1s;
+    transform-origin: left;
+    position: absolute;
+    z-index: 1;
+}
+
+.card-box:hover {
+    transform:rotatex(40deg) translateX(150px) rotateY(-180deg);
+}
+
+.card-box:hover ~ .card-back {
+    transform: rotateX(40deg) translateX(150px);
+}
+
+.card-box:hover .rotulo-fix {
+    z-index: 0;
+}
+
+.card-front {
+    width: 100%;
+    height: 100%;
+    background: steelblue;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 1px 1px 10px 1px black;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.card-rotulo {
+    width: 200px;
+    height: 100px;
+    margin-top: 30px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rotulo-fix {
+    background: steelblue;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 1s;
+    z-index: -1;
+    border-radius: 0 15px 15px 0;
+}
+
+.card-back {
+    width: 100%;
+    height: 100%;
+    background: steelblue;
+    transition: 1s;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 1px 1px 10px 1px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-back-text {
+    width: 280px;
+    height: 370px;
+    margin-left: -20px;
+    padding: 20px;
+    background: white;
+    font-size: 20px;
+}
 
 /* Contacto */
+
+.contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(57, 66, 73);
+}
+
+.contacto-title h1 {
+    margin-top: 30px;
+    font-size: 40px;
+    color: white;
+}
 
 .contacto-container {
     width: 100%;
@@ -179,12 +288,11 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(57, 66, 73);
 }
 
 form {
-    background: #fff;
-    width: 400px;
+    background: rgb(43, 50, 56);
+    width: 600px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -192,7 +300,7 @@ form {
     gap: 25px;
     border-radius: 15px;
     text-align: center;
-    color: #24c78e;
+    color: rgb(196, 0, 0);
     font-weight: bold;
 }
 
@@ -208,27 +316,41 @@ label {
 
 .input-group input {
     width: 100%;
-    padding: 10px;
+    padding: 10px 20px;
+    color: white;
     border-radius: 15px;
-    border: 3px solid #434343;
+    border: 3px solid white;
     outline: none;
+    background: rgb(43, 50, 56);
+    font-size: 18px;
 }
 
 .input-group input:focus + label, 
 .input-group input:not(:placeholder-shown) + label {
     top: -10px;
     font-size: 18px;
+    background: rgb(43, 50, 56);
 }
 
 .input-group label {
+    text-align: initial;
     position: absolute;
-    top: 10px;
+    top: 11px;
     left: 5%;
-    transition: 0.4s;
+    transition: 0.2s;
     padding: 0 5px;
     background: transparent;
-    width: 25% !important;
-    background: #fff;
+    font-size: 20px;
+}
+
+.l-1 {
+    width: 84px;
+}
+.l-2 {
+    width: 60px;
+}
+.l-3 {
+    width: 85px;
 }
 
 .check-container {
@@ -239,7 +361,7 @@ label {
 }
 
 .check-container p{
-    color: #434343;
+    color: white;
 }
 
 .box-container {
@@ -263,9 +385,9 @@ label {
 
 .check input:checked ~ .checkbox {
     transform: rotate(45deg);
-    width: 7px;
+    width: 10px;
     margin-left: 10px;
-    border-color: #24c78e;
+    border-color: rgb(196, 0, 0);
     border-top-color: transparent;
     border-left-color: transparent;
     border-radius: 0;
@@ -275,7 +397,7 @@ label {
     display: block;
     width: inherit;
     height: inherit;
-    border: 3px solid #434343;
+    border: 3px solid white;
     border-radius: 6px;
     transition: all 0.375s;
 }
@@ -292,9 +414,9 @@ label {
 .submit {
     height: 40px;
     width: 150px;
-    border: 3px solid #434343;
+    border: 3px solid white;
     background: transparent;
-    color: #434343;
+    color: white;
     font-weight: bold;
     position: relative;
     cursor: pointer;
@@ -311,7 +433,7 @@ label {
     height: 40px;
     border: inherit;
     transition: 0.5s ease;
-    border-color: #24c78e;
+    border-color: rgb(196, 0, 0);
 }
 
 .submit::before {
@@ -334,14 +456,12 @@ label {
     height: calc(70% + 27px);
 }
 
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+/* Permite quitar botones a inputs */
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
+input[type=number] { -moz-appearance:textfield; }
