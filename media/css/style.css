@@ -333,6 +333,7 @@ label {
 }
 
 .input-group label {
+    width: fit-content;
     text-align: initial;
     position: absolute;
     top: 11px;
@@ -341,16 +342,6 @@ label {
     padding: 0 5px;
     background: transparent;
     font-size: 20px;
-}
-
-.l-1 {
-    width: 84px;
-}
-.l-2 {
-    width: 60px;
-}
-.l-3 {
-    width: 85px;
 }
 
 .check-container {
